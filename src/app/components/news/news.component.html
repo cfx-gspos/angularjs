@@ -1,0 +1,86 @@
+<div style="width: 1000px;height: 1000px;">
+    <ul>
+        <li *ngFor="let item of list">
+            {{item.title}}
+
+            <ul>
+                <li *ngFor="let innerItem of item.list">
+                    {{innerItem.title}}
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <button (click)="doLogin()">Post data</button>
+</div>
+<p>news works!</p>
+{{title}}
+
+<div title="I am hard code">
+    AA
+</div>
+
+<div [title]="titleFrank">BB</div>
+{{3+4}}
+1+2={{1+2}}
+
+<ul>
+    <li *ngFor="let item of arr">
+        {{item}}
+    </li>
+</ul>
+loop the object array begin
+<ul>
+    <li *ngFor="let user of userList">
+        {{user.name}}=={{user.age}}
+    </li>
+</ul>
+loop the object array end
+
+
+<ul>
+    <li *ngFor="let car of cars;let key=index;">
+        <span *ngIf="key==1" class="red"> {{car.cate}} {{key}}</span>
+        <span *ngIf="key!=1"> {{car.cate}} {{key}}</span>
+
+        <ol>
+            <li *ngFor="let l of car.list">
+                {{l.title}}--{{l.price}}
+            </li>
+        </ol>
+    </li>
+</ul>
+<img src="/assets/images/image1.png" />
+<img [src]="pictureUrl" />
+
+<div *ngIf="flag">
+    ng if true
+</div>
+<div *ngIf="!flag">
+    ng if false
+</div>
+
+
+<div [ngSwitch]="orderStatus">
+    <div *ngSwitchCase="1">支付</div>
+    <div *ngSwitchCase="2">确认</div>
+    <div *ngSwitchDefault>异常</div>
+</div>
+
+<div [ngClass]="{'red': flagClass,'blue':!flagClass}">ngclass example</div>
+
+<div [ngStyle]="{'color': 'red'}">
+    ngstyle
+</div>
+{{today|date:'yyyy-MM-dd HH:mm ss'}}
+<button (click)="run()">Event</button>
+{{data}}
+
+<button (click)="setData($event)"> Set Data</button>
+<input (keyup)="keyDown($event)" />
+<h1>
+    MVVM
+</h1>
+
+<input [(ngModel)]="keywords">
+{{keywords}}
+<button (click)="changeKeywords()">Change keywords</button>

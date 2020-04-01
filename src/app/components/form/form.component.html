@@ -1,0 +1,31 @@
+Rigister
+<p>
+    Name:<input [(ngModel)]="peopleInfo.username" />
+</p>
+
+<p>
+    Gender:
+    <input type="radio" value="1" name="gender" id="sex1"  [(ngModel)]="peopleInfo.sex" /> <label for="sex1">M</label>
+    <input type="radio"  value="2" name="gender" id=sex2 [(ngModel)]="peopleInfo.sex" />  <label for="sex2">W</label>
+</p>
+<p>
+    City:
+    <select  [(ngModel)]="peopleInfo.city">
+        <option [value]="item" *ngFor="let item  of peopleInfo.cityList">{{item}}</option>
+    </select>
+</p>
+<p>
+    hobby:
+    <span *ngFor="let item of peopleInfo.hobby;let key=index;">
+        <input type="checkbox" [id]="'check'+key" [(ngModel)]="item.checked" /> <label [for]="'check'+key">{{item.title}}</label>
+    </span>
+</p>
+<p>Remark:
+    <textarea [(ngModel)]="peopleInfo.remark">
+
+    </textarea>
+</p>
+<button (click)="submitData()">Get Data</button>
+<pre>
+    {{peopleInfo|json}}
+</pre>
